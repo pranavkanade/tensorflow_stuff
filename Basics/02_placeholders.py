@@ -10,11 +10,11 @@ cs224d
 
 
 import tensorflow as tf
-import numpy as np
-x = tf.placeholder(tf.float32, name='x')
+# import numpy as np
+x = tf.placeholder(tf.float32, shape=[None, 3], name='x')
 
 y = x * 2
 
 with tf.Session() as session:
-    result = session.run(y, feed_dict={x : [1, 2, 3]})
-	print(result)
+    result = session.run(y, feed_dict={x : [[3, 4, 5],[1, 2, 3]]})
+    print(result)
